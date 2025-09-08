@@ -22,11 +22,15 @@ function App() {
     setLoading(true);
 
     try {
+      // Use CORS proxy so it works on GitHub Pages
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
+        `https://api.allorigins.win/get?url=${encodeURIComponent(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
+        )}`
       );
 
-      const data = await res.json();
+      const dataWrapped = await res.json();
+      const data = JSON.parse(dataWrapped.contents);
 
       if (data.cod !== 200) {
         alert(data.message || "City not found");
@@ -44,6 +48,7 @@ function App() {
       }
     } catch (error) {
       console.error(error);
+      alert("Failed to fetch weather. Try again.");
     } finally {
       setLoading(false);
     }
@@ -53,9 +58,15 @@ function App() {
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-purple-700 overflow-hidden text-white">
       <CloudsBackground />
 
-      <h1 className="text-5xl font-extrabold mb-10 z-10">🌤️ Glossy Weather 3D App</h1>
+      <h1 className="text-5xl font-extrabold mb-10 z-10">
+        🌤️ Glossy Weather 3D App
+      </h1>
 
-      <AnimatedSearch city={city} setCity={setCity} fetchWeather={fetchWeather} />
+      <AnimatedSearch
+        city={city}
+        setCity={setCity}
+        fetchWeather={fetchWeather}
+      />
 
       {loading && <p className="mt-6 text-lg z-10">Loading...</p>}
 

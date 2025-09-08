@@ -59,7 +59,7 @@ function App() {
       <CloudsBackground />
 
       <h1 className="text-5xl font-extrabold mb-10 z-10">
-        🌤️ Glossy Weather
+        🌤️ Weather Mart
       </h1>
 
       <AnimatedSearch

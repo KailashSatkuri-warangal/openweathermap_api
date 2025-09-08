@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white font-sans;
+}
+
+.app-container {
+  @apply relative min-h-screen flex items-center justify-center p-4;
+}
+
+.phone-frame {
+  @apply relative w-[360px] h-[720px] bg-black rounded-3xl shadow-2xl overflow-hidden border-8 border-gray-300;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.cloud-1 {
+  width: 150px;
+  height: 80px;
+  top: 10%;
+  left: -200px;
+  animation: floatCloud 60s linear infinite;
+}
+
+.cloud-2 {
+  width: 120px;
+  height: 60px;
+  top: 40%;
+  left: -150px;
+  animation: floatCloud 80s linear infinite;
+}
+
+.cloud-3 {
+  width: 180px;
+  height: 100px;
+  top: 70%;
+  left: -250px;
+  animation: floatCloud 100s linear infinite;
+}
+
+@keyframes floatCloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}

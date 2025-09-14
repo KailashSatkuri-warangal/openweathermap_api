@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+# Weather API Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a personal, live Weather API application built with React, TypeScript, and Tailwind CSS. It provides a visually engaging and interactive interface for retrieving and displaying weather data using animated components and a sleek 3D design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Live weather data fetching from a public API.
+- Animated search component.
+- Dynamic clouds background.
+- 3D Weather cards for an enhanced visual experience.
+- Responsive design using Tailwind CSS.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+public/
+  day.svg
+  react.svg
+src/
+  assets/
+  components/
+    AnimatedSearch.tsx
+    CloudsBackground.tsx
+    WeatherCard3D.tsx
+  App.css
+  App.tsx
+  index.css
+  main.tsx
+  vite-env.d.ts
+.gitignore
+README.md
+eslint.config.js
+index.html
+package-lock.json
+package.json
+postcss.config.js
+tailwind.config.js
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository:
+   ```
+   git clone [your-repository-url]
+   ```
+2. Navigate to the project directory:
+   ```
+   cd [your-project-folder]
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Running the App
+
+To start the development server:
+
+```bash
+npm run dev
 ```
+
+The application will be available at [![Localhost](https://img.shields.io/badge/Run%20on-Localhost%3A5000-brightgreen?logo=node.js)](http://localhost:5173) by default.
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+## Configuration
+
+- Tailwind CSS is used for styling.
+- Vite is used as the build tool.
+- TypeScript ensures strong typing.
+
+## Contributions
+
+Feel free to contribute by opening issues or submitting pull requests.
+
+---
+
+Created and maintained by KAILASH.
+
